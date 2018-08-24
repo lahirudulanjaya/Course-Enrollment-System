@@ -60,12 +60,12 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
         year = new javax.swing.JTextField();
         sem = new javax.swing.JTextField();
         ID = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        delete = new javax.swing.JToggleButton();
+        change = new javax.swing.JToggleButton();
         reset = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        update1 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
+        add = new javax.swing.JToggleButton();
         no = new javax.swing.JRadioButton();
         yes = new javax.swing.JRadioButton();
         course = new javax.swing.JComboBox<>();
@@ -133,23 +133,23 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
         jPanel1.add(sem, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 300, 30));
         jPanel1.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 300, 30));
 
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton2.setText("DELETE");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        delete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        delete.setText("DELETE");
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 120, 40));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 120, 40));
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton1.setText("Search");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        change.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        change.setText("Search");
+        change.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                changeActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 120, 40));
+        jPanel1.add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 120, 40));
 
         reset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         reset.setText("RESET");
@@ -164,23 +164,23 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
         jLabel3.setText("Subject Name");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 180, 40));
 
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton3.setText("BACK");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 80, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 80, 40));
 
-        update1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        update1.setText("ADD");
-        update1.addActionListener(new java.awt.event.ActionListener() {
+        add.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        add.setText("ADD");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update1ActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
-        jPanel1.add(update1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 120, 40));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 120, 40));
 
         no.setBackground(new java.awt.Color(204, 204, 204));
         buttonGroup1.add(no);
@@ -231,16 +231,16 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
         
     }//GEN-LAST:event_updateActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
             String id = stu_id.getText();
         try {
             Subject_controll.Subject_delete(id);
         } catch (SQLException ex) {
             Logger.getLogger(Admin_Update_Subject.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
                 String id = stu_id.getText();
                 
         try{
@@ -274,7 +274,7 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
         }   catch (HeadlessException | SQLException ex) {
             Logger.getLogger(Admin_Update_Subject.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_changeActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
                 ID.setText(null);
@@ -286,13 +286,13 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_resetActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
      register_option al=new register_option(); 
         this.dispose();
         al.setVisible(true);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
-    private void update1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update1ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         Subject us =new Subject();
         us.setName(name.getText());
         us.setSubject_code(ID.getText());
@@ -317,7 +317,7 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,ex);
         }
 
-    }//GEN-LAST:event_update1ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
     private void stu_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stu_idActionPerformed
         // TODO add your handling code here:
@@ -413,9 +413,13 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ID;
+    private javax.swing.JToggleButton add;
+    private javax.swing.JToggleButton back;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JToggleButton change;
     private javax.swing.JComboBox<String> course;
     private javax.swing.JTextField credit;
+    private javax.swing.JToggleButton delete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -425,16 +429,12 @@ public class Admin_Update_Subject extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JTextField name;
     private javax.swing.JRadioButton no;
     private javax.swing.JToggleButton reset;
     private javax.swing.JTextField sem;
     private javax.swing.JTextField stu_id;
     private javax.swing.JToggleButton update;
-    private javax.swing.JToggleButton update1;
     private javax.swing.JTextField year;
     private javax.swing.JRadioButton yes;
     // End of variables declaration//GEN-END:variables

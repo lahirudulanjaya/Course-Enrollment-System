@@ -33,14 +33,14 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
 
         add = new javax.swing.JToggleButton();
         find = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        show = new javax.swing.JToggleButton();
+        add_assign = new javax.swing.JToggleButton();
+        add_exm = new javax.swing.JToggleButton();
+        add_final = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         add.setText("Add Student");
@@ -49,7 +49,7 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 266, 49));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 140, 49));
 
         find.setText("Find Student");
         find.addActionListener(new java.awt.event.ActionListener() {
@@ -57,39 +57,39 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
                 findActionPerformed(evt);
             }
         });
-        getContentPane().add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 266, 49));
+        getContentPane().add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 150, 50));
 
-        jToggleButton3.setText("Show All Students");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        show.setText("Show All Students");
+        show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                showActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 270, 49));
+        getContentPane().add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, 49));
 
-        jToggleButton1.setText("Add Assignment Marks");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        add_assign.setText("Add Assignment Marks");
+        add_assign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                add_assignActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 270, 50));
+        getContentPane().add(add_assign, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 150, 50));
 
-        jToggleButton2.setText("Add Exam Marks");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        add_exm.setText("Add Exam Marks");
+        add_exm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                add_exmActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 270, 50));
+        getContentPane().add(add_exm, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 150, 50));
 
-        jToggleButton4.setText("Add Final Marks");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        add_final.setText("Add Final Marks");
+        add_final.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                add_finalActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 270, 50));
+        getContentPane().add(add_final, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 140, 50));
 
         jToggleButton5.setText("Back");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,14 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
                 jToggleButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 110, 30));
+        getContentPane().add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 110, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 51, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/Master.jpg"))); // NOI18N
+        jLabel1.setText("Manage Postgraduate Details");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 550, 160));
 
         pack();
         setLocationRelativeTo(null);
@@ -117,13 +124,13 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
         fd.setVisible(true);
     }//GEN-LAST:event_findActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         this.dispose();
         Show_postgraduate sh = new Show_postgraduate();
         sh.setVisible(true);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_showActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void add_assignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_assignActionPerformed
         this.dispose();
         try {
             Assignment_marks am =new Assignment_marks();
@@ -131,9 +138,9 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Admin_Undergraduate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_add_assignActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void add_exmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_exmActionPerformed
         try {
             this.dispose();
             Exam_Marks em =new Exam_Marks();
@@ -141,13 +148,13 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Admin_Postgraduate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_add_exmActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+    private void add_finalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_finalActionPerformed
         Add_Final ap =new Add_Final();
         this.dispose();
         ap.setVisible(true);
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_add_finalActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         register_option ro=new register_option();
@@ -192,11 +199,12 @@ public class Admin_Postgraduate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton add;
+    private javax.swing.JToggleButton add_assign;
+    private javax.swing.JToggleButton add_exm;
+    private javax.swing.JToggleButton add_final;
     private javax.swing.JToggleButton find;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton show;
     // End of variables declaration//GEN-END:variables
 }

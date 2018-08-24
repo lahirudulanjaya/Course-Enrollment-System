@@ -5,10 +5,16 @@
  */
 package NSBMCourseEnrollmentSystem_view;
 
+import NSBMCourseEnrollmentSystem_DB_connection.DB_connection;
 import NSBMCourseEnrollmentSystem_control.Undergraduate_Student_controll;
 import NSBMCourseEnrollmentSystem_model.Undergraduate_Student;
 import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -21,6 +27,11 @@ public class Register_undergraduate extends javax.swing.JFrame {
      */
     public Register_undergraduate() {
         initComponents();
+        try {
+            fillcombo();
+        } catch (SQLException ex) {
+            Logger.getLogger(Register_undergraduate.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -64,7 +75,7 @@ public class Register_undergraduate extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         but1 = new javax.swing.JRadioButton();
         but2 = new javax.swing.JRadioButton();
-        Register1 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         dob = new javax.swing.JTextField();
 
@@ -220,7 +231,6 @@ public class Register_undergraduate extends javax.swing.JFrame {
         jLabel14.setBounds(430, 120, 150, 40);
 
         course.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        course.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Business Management", "Computer Science", "Engineering", " " }));
         course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 courseActionPerformed(evt);
@@ -282,15 +292,15 @@ public class Register_undergraduate extends javax.swing.JFrame {
         jPanel1.add(but2);
         but2.setBounds(590, 400, 50, 23);
 
-        Register1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Register1.setText("Back");
-        Register1.addActionListener(new java.awt.event.ActionListener() {
+        back.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Register1ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(Register1);
-        Register1.setBounds(120, 630, 150, 40);
+        jPanel1.add(back);
+        back.setBounds(120, 630, 150, 40);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -395,7 +405,7 @@ public class Register_undergraduate extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_yearActionPerformed
 
-    private void Register1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         if(Home.student==1){
         Admin_Undergraduate ad = new Admin_Undergraduate();
@@ -405,7 +415,7 @@ public class Register_undergraduate extends javax.swing.JFrame {
             Admin_Postgraduate ap =new Admin_Postgraduate();
             ap.setVisible(true);
         }
-    }//GEN-LAST:event_Register1ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     private void dobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobActionPerformed
         // TODO add your handling code here:
@@ -446,12 +456,24 @@ public class Register_undergraduate extends javax.swing.JFrame {
             }
         });
     }
+     private void fillcombo() throws SQLException{
+        
+         String sql1="Select Course_Id from courses";
+          Connection con =DB_connection.getConnection();
+          PreparedStatement pst = con.prepareStatement(sql1);
+         ResultSet rs = pst.executeQuery();
+         
+         while(rs.next()){
+             String cour = rs.getString("Course_Id");
+             course.addItem(cour);
+         }
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Register;
-    private javax.swing.JToggleButton Register1;
     private javax.swing.JTextArea address;
     private javax.swing.JTextField age;
+    private javax.swing.JToggleButton back;
     private javax.swing.JRadioButton but1;
     private javax.swing.JRadioButton but2;
     private javax.swing.ButtonGroup buttonGroup1;

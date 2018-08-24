@@ -18,10 +18,12 @@ import java.util.ArrayList;
  * @author Lahiru Dulanjaya
  */
 public class Assignment_controll {
+    //adding Assignment marks to the database
     public static void add(Assignment as) throws SQLException{
-        Connection con =DB_connection.getConnection();
-        String sql ="insert into assignment(Assignment_ID,Name,Marks,Grade,Student_Id,Subject_Code) values(?,?,?,?,?,?)";
+        Connection con =DB_connection.getConnection();//connect to the datatbase
+        String sql ="insert into assignment(Assignment_ID,Name,Marks,Grade,Student_Id,Subject_Code) values(?,?,?,?,?,?)";//mysql code for add details to the database
         PreparedStatement pst = con.prepareStatement(sql);
+        //set values to add
         pst.setObject(1,as.getAssignment_id());
         pst.setObject(2,as.getName());
         pst.setObject(3,as.getMarks());
@@ -32,8 +34,10 @@ public class Assignment_controll {
         pst.executeUpdate();
         
     }
+    //get assignment grades from database
     public static Assignment get_grade(String id) throws SQLException{
-        Assignment as =new Assignment();
+        
+        Assignment as =new Assignment();//creatind Assignment object
         Connection con =DB_connection.getConnection();
         String sql ="select * from Student_Id";
         PreparedStatement pst = con.prepareStatement(sql);

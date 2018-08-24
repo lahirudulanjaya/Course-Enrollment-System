@@ -37,14 +37,13 @@ public class Result extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        search = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -55,22 +54,24 @@ public class Result extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Student Id");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 150, 30));
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 170, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 150, 30));
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 170, 30));
 
-        jToggleButton1.setText("Search");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 80, -1));
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 80, -1));
 
-        jLabel2.setText("Result");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 150, 30));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/res.jpg"))); // NOI18N
+        jLabel2.setText("Results");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 190, 100));
 
         jLabel3.setText("Course");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 140, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 30));
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,36 +83,33 @@ public class Result extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 690, 140));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 690, 140));
 
         jLabel5.setText("Rank");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 100, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 100, 30));
 
         jLabel6.setText("Current GPA");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 100, 30));
-
-        jToggleButton2.setText("TOP 20");
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 90, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 100, 30));
 
         jLabel7.setBackground(new java.awt.Color(153, 153, 153));
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setOpaque(true);
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 230, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 230, 20));
 
         jLabel9.setBackground(new java.awt.Color(153, 153, 153));
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setOpaque(true);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 230, 20));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 230, 20));
 
         jLabel10.setBackground(new java.awt.Color(153, 153, 153));
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setOpaque(true);
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 230, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 230, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         try {
             ArrayList<Selected_Subjects> subject = Selected_Subject_controll.Selected_subject_list(id.getText());
             DefaultTableModel tbl = (DefaultTableModel) Table.getModel();
@@ -133,7 +131,7 @@ public class Result extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Result.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +180,6 @@ public class Result extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton search;
     // End of variables declaration//GEN-END:variables
 }

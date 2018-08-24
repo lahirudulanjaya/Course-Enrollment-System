@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * @author Lahiru Dulanjaya
  */
 public class Lecturer_controll {
+    //adding lecture details to the database
     public static void add(Lecturer std) throws SQLException{
         String sql = "insert into lecturer  values(?,?,?,?,?,?,?,?,?,?,?,?)";
         Connection con =DB_connection.getConnection();
@@ -72,6 +73,7 @@ public class Lecturer_controll {
                 
     }
     public static void Lecturer_delete(String id) throws SQLException{
+        //remove lecturer details from database
         String sql ="delete from lecturer where Lecturer_ID=?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst =con.prepareStatement(sql);
@@ -79,6 +81,7 @@ public class Lecturer_controll {
         pst.executeUpdate();
     }
      public static void Lecturer_update(Lecturer std) throws SQLException{
+         
         String sql = "update Lecturer set Name=?,Address=?,Contact_num=?,Email=?,Gender=?,Room_Room_ID=?,Subject_Subject_code=?,Faculty_id=?,Course_id=?,Age=?,DOB=? where Lecturer_ID =?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst = con.prepareStatement(sql);
@@ -102,7 +105,7 @@ public class Lecturer_controll {
          Connection con = DB_connection.getConnection();
          String sql = "select * from Lecturer";
          Statement st = con.createStatement();
-         ResultSet rs =st.executeQuery(sql);
+         ResultSet rs =st.executeQuery(sql);//get database results
          ArrayList<Lecturer> leclist =new ArrayList<>();
          while (rs.next()){
              Lecturer std =new Lecturer();

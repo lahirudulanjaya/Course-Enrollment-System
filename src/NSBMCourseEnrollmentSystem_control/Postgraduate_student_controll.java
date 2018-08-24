@@ -22,6 +22,7 @@ public class Postgraduate_student_controll {
     
     
      public static void add(Postgraduate std) throws SQLException{
+         //add postgraduate details to database
         String sql = "insert into master_student  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst = con.prepareStatement(sql);
@@ -75,6 +76,7 @@ public class Postgraduate_student_controll {
                 
     }
      public static void Postgraduate_Student_delete(String id) throws SQLException{
+         //remove postgraduate details from database
         String sql ="delete from master_student where StudentId=?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst =con.prepareStatement(sql);
@@ -82,6 +84,7 @@ public class Postgraduate_student_controll {
         pst.executeUpdate();
     }
      public static void Postgraduate_Student_update(Postgraduate std) throws SQLException{
+         //upadate postgraduate details to database
         String sql = "update master_student set Name=?,Age=?,Gender=?,Address=?,DOB=?,Phn_num=?,Courses_Course_Id=?,Faculty_FacultyId=?,Year=?,Semester=?,Degree=?,Instiutue=? where StudentId =?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst = con.prepareStatement(sql);
@@ -109,7 +112,7 @@ public class Postgraduate_student_controll {
          String sql = "select * from master_student";
          Statement st = con.createStatement();
          ResultSet rs =st.executeQuery(sql);
-         ArrayList<Postgraduate> stdlist =new ArrayList<>();
+         ArrayList<Postgraduate> stdlist =new ArrayList<>();//create postgraduate objects array list
          while (rs.next()){
              Postgraduate us =new Postgraduate();
             us.setAdmission_number(rs.getString(1));

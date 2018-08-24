@@ -48,18 +48,6 @@ public class Email extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        u_id = new javax.swing.JTextField();
-        u_email = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        result = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        check = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -69,9 +57,23 @@ public class Email extends javax.swing.JFrame {
         p_id = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         p_result = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        send1 = new javax.swing.JButton();
+        cheak = new javax.swing.JButton();
+        back1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        u_id = new javax.swing.JTextField();
+        u_email = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        result = new javax.swing.JTextArea();
+        back = new javax.swing.JButton();
+        send = new javax.swing.JButton();
+        check = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -85,62 +87,6 @@ public class Email extends javax.swing.JFrame {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        jLabel3.setText("Send Mails to Undergraduate");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 270, 27));
-
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel5.setText("Result");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 171, 27));
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel6.setText("Enter Sudent Index Number");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 200, 27));
-        jPanel1.add(u_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 220, 30));
-        jPanel1.add(u_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 220, 30));
-
-        result.setColumns(20);
-        result.setRows(5);
-        jScrollPane2.setViewportView(result);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 300, 150));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 100, 30));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Send");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 100, 30));
-
-        check.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        check.setText("Check");
-        check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkActionPerformed(evt);
-            }
-        });
-        jPanel1.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 100, 30));
-
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel8.setText("Student Email");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 171, 27));
-
-        jTabbedPane1.addTab("Undergraduate", jPanel1);
-
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -150,47 +96,109 @@ public class Email extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel9.setText("Enter Sudent Index Number");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 200, 27));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, 27));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel10.setText("Student Email");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 171, 27));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 171, 27));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel11.setText("Result");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 171, 27));
-        jPanel2.add(p_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 220, 30));
-        jPanel2.add(p_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 220, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 171, 27));
+        jPanel2.add(p_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 220, 30));
+        jPanel2.add(p_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 220, 30));
 
         p_result.setColumns(20);
         p_result.setRows(5);
         jScrollPane1.setViewportView(p_result);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 290, 140));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 290, 140));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Send");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        send1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        send1.setText("Send");
+        send1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                send1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 80, 30));
+        jPanel2.add(send1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 80, 30));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Check");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cheak.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cheak.setText("Check");
+        cheak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cheakActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, 90, 30));
+        jPanel2.add(cheak, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 90, 30));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setText("Back");
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 425, 70, 30));
+        back1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        back1.setText("Back");
+        jPanel2.add(back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 70, 30));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/email.jpg"))); // NOI18N
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 100, 80));
 
         jTabbedPane1.addTab("Postgraduate", jPanel2);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        jLabel3.setText("Send Mails to Undergraduate");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 270, 27));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel5.setText("Result");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 171, 27));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel6.setText("Enter Sudent Index Number");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 200, 27));
+        jPanel1.add(u_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 220, 30));
+        jPanel1.add(u_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 220, 30));
+
+        result.setColumns(20);
+        result.setRows(5);
+        jScrollPane2.setViewportView(result);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 300, 150));
+
+        back.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 100, 30));
+
+        send.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        send.setText("Send");
+        send.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendActionPerformed(evt);
+            }
+        });
+        jPanel1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 100, 30));
+
+        check.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        check.setText("Check");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
+        jPanel1.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 100, 30));
+
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel8.setText("Student Email");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 171, 27));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/email.jpg"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 100, 80));
+
+        jTabbedPane1.addTab("Undergraduate", jPanel1);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 540));
 
@@ -208,25 +216,25 @@ public class Email extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cheakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cheakActionPerformed
         try {
             p_email.setText(po_email());
             p_result.setText(p_result());
         } catch (SQLException ex) {
             Logger.getLogger(Email.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cheakActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void send1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send1ActionPerformed
        if("true".equals(new Email().sendMail(p_email.getText(),"Results",p_result.getText()))){
             JOptionPane.showMessageDialog(this,"Success");
        }
        else{
                JOptionPane.showMessageDialog(this,"Send Failed");
                }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_send1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendActionPerformed
         
         
         if("true".equals(new Email().sendMail(u_email.getText(),"Results",result.getText()))){
@@ -235,13 +243,13 @@ public class Email extends javax.swing.JFrame {
        else{
                JOptionPane.showMessageDialog(this,"Send Failed");
                }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_sendActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        register_option rp =new register_option();
        rp.setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,17 +398,17 @@ public class Email extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
+    private javax.swing.JButton back1;
+    private javax.swing.JButton cheak;
     private javax.swing.JButton check;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -415,6 +423,8 @@ public class Email extends javax.swing.JFrame {
     private javax.swing.JTextField p_id;
     private javax.swing.JTextArea p_result;
     private javax.swing.JTextArea result;
+    private javax.swing.JButton send;
+    private javax.swing.JButton send1;
     private javax.swing.JTextField u_email;
     private javax.swing.JTextField u_id;
     // End of variables declaration//GEN-END:variables

@@ -36,15 +36,15 @@ public class Add_Final extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
+        search = new javax.swing.JToggleButton();
         id = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         avg = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        add = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         gpv = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -56,17 +56,17 @@ public class Add_Final extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setText("Search");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, 150, 30));
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 210, 30));
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 150, 30));
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 210, 30));
 
         jLabel2.setText("Index Number");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 160, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 160, 20));
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,21 +88,21 @@ public class Add_Final extends javax.swing.JFrame {
         avg.setOpaque(true);
         getContentPane().add(avg, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 150, 20));
 
-        jToggleButton2.setText("Add");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        add.setText("Add");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 120, -1));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 120, -1));
 
-        jToggleButton3.setText("Back");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 90, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 90, -1));
 
         jLabel4.setText("GPA");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 60, 20));
@@ -114,17 +114,19 @@ public class Add_Final extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 0, 18)); // NOI18N
         jLabel1.setText("Calculate GPA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 190, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 200, 40));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         try {
+            //create a table 
             DefaultTableModel tbl = (DefaultTableModel) Table.getModel();
             ArrayList<NSBMCourseEnrollmentSystem_model.Result> result = Exam_controll.results(id.getText());
             tbl.setRowCount(0);
+            //create result object and add values to table
             for(NSBMCourseEnrollmentSystem_model.Result rs: result){
                 Object Data[]={rs.getIndex_num(),rs.getSubject(),rs.getAvg_assignment(),rs.getExam_mark(),rs.getFinal_mark(),rs.getGrade(),rs.getGPV()};
                 tbl.addRow(Data);
@@ -136,9 +138,9 @@ public class Add_Final extends javax.swing.JFrame {
             Logger.getLogger(Add_Final.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         try {
             
             Exam_controll.add(id.getText(),Double.parseDouble(avg.getText()),Double.parseDouble(gpv.getText()));
@@ -147,9 +149,9 @@ public class Add_Final extends javax.swing.JFrame {
             Logger.getLogger(Add_Final.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,ex);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        this.dispose();
        if(Home.student==1){
         Admin_Undergraduate ad = new Admin_Undergraduate();
@@ -159,7 +161,7 @@ public class Add_Final extends javax.swing.JFrame {
             Admin_Postgraduate ap =new Admin_Postgraduate();
             ap.setVisible(true);
         }
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +198,7 @@ public class Add_Final extends javax.swing.JFrame {
         });
     }
     public double avg(){
+        //get average of results
         DefaultTableModel tbl = (DefaultTableModel) Table.getModel();
         double sum =0;
         for(int i=0;i<tbl.getRowCount();i++){
@@ -205,6 +208,7 @@ public class Add_Final extends javax.swing.JFrame {
         return sum/tbl.getRowCount();
     } 
     public double GPV(){
+        //create a gpa value
         DefaultTableModel tbl = (DefaultTableModel) Table.getModel();
         double sum =0;
         for(int i=0;i<tbl.getRowCount();i++){
@@ -218,7 +222,9 @@ public class Add_Final extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
+    private javax.swing.JToggleButton add;
     private javax.swing.JLabel avg;
+    private javax.swing.JToggleButton back;
     private javax.swing.JLabel gpv;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
@@ -226,8 +232,6 @@ public class Add_Final extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton search;
     // End of variables declaration//GEN-END:variables
 }

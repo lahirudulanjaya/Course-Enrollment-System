@@ -46,6 +46,15 @@ public class Sign_up_controll {
         ResultSet rs =pst.executeQuery();    
         return rs.next();
     }
+    public static boolean search_admin(String user,String password) throws SQLException{
+        String sql ="select * from admin where username=? and password=PASSWORD(?)";
+         Connection con = DB_connection.getConnection();
+        PreparedStatement pst =con.prepareStatement(sql);
+        pst.setObject(1,user);
+        pst.setObject(2,password);
+        ResultSet rs =pst.executeQuery();    
+        return rs.next();
+    }
     
     public static boolean checkvalidity(String id) throws SQLException{
         String sql ="select * from undergraduate_student where StudentId=?";

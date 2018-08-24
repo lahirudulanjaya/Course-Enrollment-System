@@ -29,15 +29,15 @@ public class register_option extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        postgraduate = new javax.swing.JToggleButton();
         undergraduate = new javax.swing.JToggleButton();
-        undergraduate1 = new javax.swing.JToggleButton();
-        undergraduate3 = new javax.swing.JToggleButton();
+        lec = new javax.swing.JToggleButton();
+        instructor = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
-        undergraduate4 = new javax.swing.JToggleButton();
-        undergraduate5 = new javax.swing.JToggleButton();
-        undergraduate6 = new javax.swing.JToggleButton();
-        undergraduate7 = new javax.swing.JToggleButton();
+        sub = new javax.swing.JToggleButton();
+        payment = new javax.swing.JToggleButton();
+        send_mails = new javax.swing.JToggleButton();
+        allocation = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin");
@@ -45,26 +45,28 @@ public class register_option extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Postgraduate Student");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jToggleButton1.setOpaque(true);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        postgraduate.setBackground(new java.awt.Color(102, 102, 102));
+        postgraduate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        postgraduate.setForeground(new java.awt.Color(255, 255, 255));
+        postgraduate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/master'.jpg"))); // NOI18N
+        postgraduate.setText("Postgraduate ");
+        postgraduate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        postgraduate.setOpaque(true);
+        postgraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                postgraduateActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 310, 60));
+        jPanel1.add(postgraduate, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 210, 70));
 
         undergraduate.setBackground(new java.awt.Color(102, 102, 102));
         undergraduate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         undergraduate.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate.setText("Undergraduate Student");
+        undergraduate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/stu.jpg"))); // NOI18N
+        undergraduate.setText("Undergraduate ");
         undergraduate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         undergraduate.setBorderPainted(false);
         undergraduate.setFocusCycleRoot(true);
@@ -73,35 +75,37 @@ public class register_option extends javax.swing.JFrame {
                 undergraduateActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 310, 60));
+        jPanel1.add(undergraduate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 220, 70));
 
-        undergraduate1.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate1.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate1.setText("Lecturers");
-        undergraduate1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate1.setFocusCycleRoot(true);
-        undergraduate1.setOpaque(true);
-        undergraduate1.addActionListener(new java.awt.event.ActionListener() {
+        lec.setBackground(new java.awt.Color(102, 102, 102));
+        lec.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lec.setForeground(new java.awt.Color(255, 255, 255));
+        lec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/instructor (1).jpg"))); // NOI18N
+        lec.setText("Lecturers");
+        lec.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lec.setFocusCycleRoot(true);
+        lec.setOpaque(true);
+        lec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate1ActionPerformed(evt);
+                lecActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 310, 60));
+        jPanel1.add(lec, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 220, 60));
 
-        undergraduate3.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate3.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate3.setText("Instructors");
-        undergraduate3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate3.setFocusCycleRoot(true);
-        undergraduate3.setOpaque(true);
-        undergraduate3.addActionListener(new java.awt.event.ActionListener() {
+        instructor.setBackground(new java.awt.Color(102, 102, 102));
+        instructor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        instructor.setForeground(new java.awt.Color(255, 255, 255));
+        instructor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/lec1.jpg"))); // NOI18N
+        instructor.setText("Instructors");
+        instructor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        instructor.setFocusCycleRoot(true);
+        instructor.setOpaque(true);
+        instructor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate3ActionPerformed(evt);
+                instructorActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 310, 60));
+        jPanel1.add(instructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 210, 70));
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,65 +113,69 @@ public class register_option extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 120, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 120, 40));
 
-        undergraduate4.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate4.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate4.setText("Subjects");
-        undergraduate4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate4.setFocusCycleRoot(true);
-        undergraduate4.setOpaque(true);
-        undergraduate4.addActionListener(new java.awt.event.ActionListener() {
+        sub.setBackground(new java.awt.Color(102, 102, 102));
+        sub.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        sub.setForeground(new java.awt.Color(255, 255, 255));
+        sub.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/sub1.jpg"))); // NOI18N
+        sub.setText("Subjects");
+        sub.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        sub.setFocusCycleRoot(true);
+        sub.setOpaque(true);
+        sub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate4ActionPerformed(evt);
+                subActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 310, 60));
+        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 220, 60));
 
-        undergraduate5.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate5.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate5.setText("Payment");
-        undergraduate5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate5.setFocusCycleRoot(true);
-        undergraduate5.setOpaque(true);
-        undergraduate5.addActionListener(new java.awt.event.ActionListener() {
+        payment.setBackground(new java.awt.Color(102, 102, 102));
+        payment.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        payment.setForeground(new java.awt.Color(255, 255, 255));
+        payment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/payment1.jpg"))); // NOI18N
+        payment.setText("Payment");
+        payment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        payment.setFocusCycleRoot(true);
+        payment.setOpaque(true);
+        payment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate5ActionPerformed(evt);
+                paymentActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 310, 60));
+        jPanel1.add(payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 210, 60));
 
-        undergraduate6.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate6.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate6.setText("Send Mails");
-        undergraduate6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate6.setFocusCycleRoot(true);
-        undergraduate6.setOpaque(true);
-        undergraduate6.addActionListener(new java.awt.event.ActionListener() {
+        send_mails.setBackground(new java.awt.Color(102, 102, 102));
+        send_mails.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        send_mails.setForeground(new java.awt.Color(255, 255, 255));
+        send_mails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/ema.jpg"))); // NOI18N
+        send_mails.setText("Send Mails");
+        send_mails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        send_mails.setFocusCycleRoot(true);
+        send_mails.setOpaque(true);
+        send_mails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate6ActionPerformed(evt);
+                send_mailsActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 310, 60));
+        jPanel1.add(send_mails, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 210, 60));
 
-        undergraduate7.setBackground(new java.awt.Color(102, 102, 102));
-        undergraduate7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        undergraduate7.setForeground(new java.awt.Color(255, 255, 255));
-        undergraduate7.setText("Class Allocation");
-        undergraduate7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        undergraduate7.setFocusCycleRoot(true);
-        undergraduate7.setOpaque(true);
-        undergraduate7.addActionListener(new java.awt.event.ActionListener() {
+        allocation.setBackground(new java.awt.Color(102, 102, 102));
+        allocation.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        allocation.setForeground(new java.awt.Color(255, 255, 255));
+        allocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/gI_93340_time-tracking-icon.jpg"))); // NOI18N
+        allocation.setText("Class Allocation");
+        allocation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        allocation.setFocusCycleRoot(true);
+        allocation.setOpaque(true);
+        allocation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undergraduate7ActionPerformed(evt);
+                allocationActionPerformed(evt);
             }
         });
-        jPanel1.add(undergraduate7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 310, 60));
+        jPanel1.add(allocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 250, 60));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 540));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -181,26 +189,26 @@ public class register_option extends javax.swing.JFrame {
         
     }//GEN-LAST:event_undergraduateActionPerformed
 
-    private void undergraduate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate1ActionPerformed
+    private void lecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lecActionPerformed
        Home.student=3;
         this.dispose();
         Admin_Lecturer ap = new Admin_Lecturer();
         ap.setVisible(true);  // TODO add your handling code here:
-    }//GEN-LAST:event_undergraduate1ActionPerformed
+    }//GEN-LAST:event_lecActionPerformed
 
-    private void undergraduate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate3ActionPerformed
+    private void instructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructorActionPerformed
         Home.student=4;
         this.dispose();
         Admin_Instructor ap = new Admin_Instructor();
         ap.setVisible(true);
-    }//GEN-LAST:event_undergraduate3ActionPerformed
+    }//GEN-LAST:event_instructorActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void postgraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postgraduateActionPerformed
         Home.student=2;
         this.dispose();
         Admin_Postgraduate ap = new Admin_Postgraduate();
         ap.setVisible(true);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_postgraduateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Home hm =new Home();
@@ -208,29 +216,29 @@ public class register_option extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void undergraduate4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate4ActionPerformed
+    private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
         Admin_Update_Subject up =new Admin_Update_Subject();
         this.dispose();
         up.setVisible(true);
-    }//GEN-LAST:event_undergraduate4ActionPerformed
+    }//GEN-LAST:event_subActionPerformed
 
-    private void undergraduate5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate5ActionPerformed
+    private void paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentActionPerformed
        this.dispose();
        Payment ww =new Payment();
        ww.setVisible(true);
-    }//GEN-LAST:event_undergraduate5ActionPerformed
+    }//GEN-LAST:event_paymentActionPerformed
 
-    private void undergraduate6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate6ActionPerformed
+    private void send_mailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_mailsActionPerformed
        this.dispose();
        Email e =new Email();
        e.setVisible(true);
-    }//GEN-LAST:event_undergraduate6ActionPerformed
+    }//GEN-LAST:event_send_mailsActionPerformed
 
-    private void undergraduate7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduate7ActionPerformed
+    private void allocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allocationActionPerformed
        Time_table t =new Time_table();
        t.setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_undergraduate7ActionPerformed
+    }//GEN-LAST:event_allocationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,15 +276,15 @@ public class register_option extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton allocation;
+    private javax.swing.JToggleButton instructor;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton lec;
+    private javax.swing.JToggleButton payment;
+    private javax.swing.JToggleButton postgraduate;
+    private javax.swing.JToggleButton send_mails;
+    private javax.swing.JToggleButton sub;
     private javax.swing.JToggleButton undergraduate;
-    private javax.swing.JToggleButton undergraduate1;
-    private javax.swing.JToggleButton undergraduate3;
-    private javax.swing.JToggleButton undergraduate4;
-    private javax.swing.JToggleButton undergraduate5;
-    private javax.swing.JToggleButton undergraduate6;
-    private javax.swing.JToggleButton undergraduate7;
     // End of variables declaration//GEN-END:variables
 }

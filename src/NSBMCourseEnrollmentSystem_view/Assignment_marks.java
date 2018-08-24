@@ -57,7 +57,7 @@ public class Assignment_marks extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         grade = new javax.swing.JTextField();
         marks = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        submit = new javax.swing.JToggleButton();
         assignment_id = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -120,13 +120,13 @@ public class Assignment_marks extends javax.swing.JFrame {
         jPanel1.add(grade, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 90, 30));
         jPanel1.add(marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 90, 30));
 
-        jToggleButton1.setText("Submit");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 140, 30));
+        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 140, 30));
         jPanel1.add(assignment_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 160, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -175,6 +175,7 @@ public class Assignment_marks extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseActionPerformed
@@ -186,7 +187,7 @@ public class Assignment_marks extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_courseActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         NSBMCourseEnrollmentSystem_model.Assignment as =new NSBMCourseEnrollmentSystem_model.Assignment();
        as.setAssignment_id(assignment_id.getText());
        as.setName(name.getText());
@@ -200,7 +201,7 @@ public class Assignment_marks extends javax.swing.JFrame {
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(this,"Try Again");
          }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_submitActionPerformed
 
     private void yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearActionPerformed
          try {
@@ -348,11 +349,11 @@ public class Assignment_marks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField marks;
     private javax.swing.JTextField name;
     private javax.swing.JComboBox<String> sem;
     private javax.swing.JComboBox<String> subject;
+    private javax.swing.JToggleButton submit;
     private javax.swing.JComboBox<String> year;
     // End of variables declaration//GEN-END:variables
 }

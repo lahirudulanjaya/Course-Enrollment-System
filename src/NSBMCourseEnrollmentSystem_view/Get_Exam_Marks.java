@@ -48,8 +48,8 @@ public class Get_Exam_Marks extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         grade_table = new javax.swing.JTable();
         id = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        result = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 700));
@@ -89,22 +89,22 @@ public class Get_Exam_Marks extends javax.swing.JFrame {
         });
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 210, 30));
 
-        jToggleButton1.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
-        jToggleButton1.setText("Get Result");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        result.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
+        result.setText("Get Result");
+        result.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                resultActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 130, 40));
+        getContentPane().add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 130, 40));
 
-        jToggleButton2.setText("Back");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 150, 30));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 150, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -114,7 +114,7 @@ public class Get_Exam_Marks extends javax.swing.JFrame {
         
     }//GEN-LAST:event_idActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
         try {
             ArrayList<Exam> result_list =Exam_controll.getall(id.getText());
             DefaultTableModel tb2 = (DefaultTableModel) grade_table.getModel();
@@ -127,13 +127,13 @@ public class Get_Exam_Marks extends javax.swing.JFrame {
             Logger.getLogger(Get_Exam_Marks.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_resultActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         Student_Ability ua =new Student_Ability();
         ua.setVisible(true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,12 +191,12 @@ public class Get_Exam_Marks extends javax.swing.JFrame {
     }
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton back;
     private javax.swing.JTable grade_table;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton result;
     // End of variables declaration//GEN-END:variables
 }

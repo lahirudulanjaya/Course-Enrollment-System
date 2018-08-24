@@ -49,12 +49,12 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        view = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         confirm = new javax.swing.JToggleButton();
-        confirm1 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         Table1 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -79,6 +79,7 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Choose Subjects");
+        setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -90,13 +91,13 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 30));
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 190, 30));
 
-        jToggleButton1.setText("View Subjects");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        view.setText("View Subjects");
+        view.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                viewActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 140, 30));
+        getContentPane().add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel3.setText("Compulsory Subjects");
@@ -136,13 +137,13 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
         });
         getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 160, 40));
 
-        confirm1.setText("Back");
-        confirm1.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirm1ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(confirm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 160, 40));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 160, 40));
 
         Table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,7 +165,7 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         
             
             try {
@@ -192,7 +193,7 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
             }
 
             
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_viewActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
       if(getsum()!=4){  
@@ -242,11 +243,11 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
         
     }//GEN-LAST:event_confirmActionPerformed
 
-    private void confirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        this.dispose();
         Student_Ability ad = new Student_Ability();
         ad.setVisible(true);
-    }//GEN-LAST:event_confirm1ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,8 +297,8 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
     private javax.swing.JTable Table1;
+    private javax.swing.JToggleButton back;
     private javax.swing.JToggleButton confirm;
-    private javax.swing.JToggleButton confirm1;
     private javax.swing.JTextField id;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JDialog jDialog1;
@@ -309,6 +310,6 @@ public class Choose_Subject_Undergraduate extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton view;
     // End of variables declaration//GEN-END:variables
 }

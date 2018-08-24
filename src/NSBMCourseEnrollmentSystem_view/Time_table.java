@@ -57,11 +57,11 @@ public class Time_table extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         slot = new javax.swing.JTextField();
         room = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        allocate = new javax.swing.JButton();
         date = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         sub1 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -72,8 +72,8 @@ public class Time_table extends javax.swing.JFrame {
         time = new javax.swing.JTextField();
         labdate = new javax.swing.JTextField();
         lab = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        back1 = new javax.swing.JButton();
+        allocate1 = new javax.swing.JButton();
         ins = new javax.swing.JComboBox<>();
         sub2 = new javax.swing.JComboBox<>();
 
@@ -104,13 +104,13 @@ public class Time_table extends javax.swing.JFrame {
         jPanel1.add(slot, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 160, 30));
         jPanel1.add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 160, 30));
 
-        jButton1.setText("Allocate");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        allocate.setText("Allocate");
+        allocate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                allocateActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 110, 30));
+        jPanel1.add(allocate, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 110, 30));
         jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 160, 30));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -119,13 +119,13 @@ public class Time_table extends javax.swing.JFrame {
 
         jPanel1.add(sub1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
-        jButton5.setText("Back");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 70, 30));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 70, 30));
 
         jTabbedPane1.addTab("Class ", jPanel1);
 
@@ -159,16 +159,16 @@ public class Time_table extends javax.swing.JFrame {
         jPanel2.add(labdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 210, 30));
         jPanel2.add(lab, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 210, 30));
 
-        jButton3.setText("Back");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 70, 30));
+        back1.setText("Back");
+        jPanel2.add(back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 70, 30));
 
-        jButton4.setText("Allocate");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        allocate1.setText("Allocate");
+        allocate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                allocate1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, -1, 30));
+        jPanel2.add(allocate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, -1, 30));
 
         jPanel2.add(ins, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 180, 20));
 
@@ -191,7 +191,7 @@ public class Time_table extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sub2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void allocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allocateActionPerformed
         Room us =new Room();
         us.setRoomno(room.getText());
         us.setSubject(sub1.getSelectedItem().toString());
@@ -205,9 +205,9 @@ public class Time_table extends javax.swing.JFrame {
             Logger.getLogger(Time_table.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_allocateActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void allocate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allocate1ActionPerformed
         Lab us =new Lab();
         us.setLabno(lab.getText());
         us.setSubject(sub2.getSelectedItem().toString());
@@ -222,13 +222,13 @@ public class Time_table extends javax.swing.JFrame {
             Logger.getLogger(Time_table.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,ex);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_allocate1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         register_option r =new register_option();
         r.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,12 +301,12 @@ public class Time_table extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton allocate;
+    private javax.swing.JButton allocate1;
+    private javax.swing.JButton back;
+    private javax.swing.JButton back1;
     private javax.swing.JTextField date;
     private javax.swing.JComboBox<String> ins;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

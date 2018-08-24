@@ -13,10 +13,11 @@ import java.sql.SQLException;
  *
  * @author Lahiru Dulanjaya
  */
+//connect to the mysql
 public class DB_connection {
     public static final String sql = "jdbc:mysql://localhost:3306/nsbm";
     public static final String user ="root";
-    public static final String password ="Passward1223*";
+    public static final String password ="123";
     
     public static Connection getConnection() throws SQLException{
         Connection con =DriverManager.getConnection(sql, user, password);

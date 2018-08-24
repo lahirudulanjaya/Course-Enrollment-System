@@ -33,54 +33,25 @@ public class Payment extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        sub = new javax.swing.JTextField();
-        id = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         index = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        check = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         pay = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         subj = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        sub = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
+        add = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Subject Code");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 110, 38));
-
-        jLabel2.setText("Admission Number ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 110, 38));
-        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 190, 30));
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 190, 30));
-
-        jButton1.setText("Add Payment");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, 30));
-
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 80, 30));
-
-        jTabbedPane1.addTab("Add Payment", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,13 +61,13 @@ public class Payment extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 170, 44));
         jPanel2.add(index, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 160, 30));
 
-        jButton3.setText("Check");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        check.setText("Check");
+        check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                checkActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 100, 30));
+        jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 100, 30));
 
         pay.setColumns(20);
         pay.setRows(5);
@@ -120,6 +91,35 @@ public class Payment extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Details", jPanel2);
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Subject Code");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 110, 38));
+
+        jLabel2.setText("Admission Number ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 110, 38));
+        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 190, 30));
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 190, 30));
+
+        add.setText("Add Payment");
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, 30));
+
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 80, 30));
+
+        jTabbedPane1.addTab("Add Payment", jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,7 +135,7 @@ public class Payment extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
        payment py = new payment();
        py.setStudent_id(id.getText());
        py.setSubject_code(sub.getText());
@@ -148,9 +148,9 @@ public class Payment extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,ex);
         }
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         try {
             String data = Payment_controll.getpayment(index.getText());
             String dat1 = Payment_controll.check(index.getText());
@@ -159,13 +159,13 @@ public class Payment extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Payment.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_checkActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         register_option er =new register_option();
         er.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,11 +203,11 @@ public class Payment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
+    private javax.swing.JButton back;
+    private javax.swing.JButton check;
     private javax.swing.JTextField id;
     private javax.swing.JTextField index;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

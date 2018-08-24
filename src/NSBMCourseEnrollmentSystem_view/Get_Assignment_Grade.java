@@ -47,9 +47,9 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         grade_table = new javax.swing.JTable();
         id = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        getresult = new javax.swing.JToggleButton();
         subject_code = new javax.swing.JComboBox<>();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 700));
@@ -93,14 +93,14 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
         });
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 210, 30));
 
-        jToggleButton1.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
-        jToggleButton1.setText("Get Result");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        getresult.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
+        getresult.setText("Get Result");
+        getresult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                getresultActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 130, 40));
+        getContentPane().add(getresult, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 130, 40));
 
         subject_code.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,13 +109,13 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
         });
         getContentPane().add(subject_code, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 150, 30));
 
-        jToggleButton2.setText("Back");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 150, 30));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 150, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -129,7 +129,7 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_idActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void getresultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getresultActionPerformed
         try {
             ArrayList<Assignment> result_list =Assignment_controll.getall(id.getText(),subject_code.getSelectedItem().toString());
             DefaultTableModel tb2 = (DefaultTableModel) grade_table.getModel();
@@ -142,13 +142,13 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
             Logger.getLogger(Get_Assignment_Grade.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_getresultActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         Student_Ability ua =new Student_Ability();
         ua.setVisible(true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     private void subject_codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject_codeActionPerformed
         // TODO add your handling code here:
@@ -201,7 +201,7 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
        
     }
        public void filcombo() throws SQLException{
-           subject_code.removeAllItems();
+           subject_code.removeAllItems();//remove all elements in "subject_code" combo box"
            Connection con =DB_connection.getConnection();
            String sql ="select Subject_Code from assignment";
            PreparedStatement ps = con.prepareStatement(sql);
@@ -212,14 +212,14 @@ public class Get_Assignment_Grade extends javax.swing.JFrame {
            }
        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton back;
+    private javax.swing.JToggleButton getresult;
     private javax.swing.JTable grade_table;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JComboBox<String> subject_code;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Lahiru Dulanjaya
@@ -51,8 +52,8 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         login = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        reg = new javax.swing.JToggleButton();
+        home = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,21 +124,21 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("LOG IN");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 160, 40));
 
-        jToggleButton1.setText("Sign Up");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        reg.setText("Sign Up");
+        reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                regActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 170, 30));
+        jPanel1.add(reg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 170, 30));
 
-        jToggleButton2.setText("Home");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        home.setText("Home");
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 110, 30));
+        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 110, 30));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 420, 600));
 
@@ -166,22 +167,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    if(stage ==5){
-        this.dispose();
-        register_option ro =new register_option();
-        ro.setVisible(true);
-    }
-    else try {
-        if((stage ==1 || stage ==2) && Sign_up_controll.search(username.getText(), password.getText())==true){
-            this.dispose();
-            Student_Ability ua = new Student_Ability();
-            ua.setVisible(true);
-            
+        
+        try {
+            if((Home.stage ==3) && Sign_up_controll.search_admin(username.getText(), password.getText())==true){
+                this.dispose();
+                System.out.print(Home.stage);
+                register_option ro =new register_option();
+                ro.setVisible(true);
+            }
+            else if ((Home.stage ==1 || Home.stage ==2) && Sign_up_controll.search(username.getText(), password.getText())==true){
+                this.dispose();
+                Student_Ability ua = new Student_Ability();
+                ua.setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "username or password incorrect");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } catch (SQLException ex) {
-        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-    }        
-       
+                    
+             
        
        
        
@@ -189,17 +195,18 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_loginActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void regActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regActionPerformed
       Sign_up su =new Sign_up();
       su.setVisible(true);
       this.dispose();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_regActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+       Home.stage=0;
         this.dispose();
         Home hm =new Home();
         hm.setVisible(true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,6 +247,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JToggleButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -249,10 +257,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton login;
     private javax.swing.JPasswordField password;
+    private javax.swing.JToggleButton reg;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

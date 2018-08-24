@@ -5,10 +5,16 @@
  */
 package NSBMCourseEnrollmentSystem_view;
 
+import NSBMCourseEnrollmentSystem_DB_connection.DB_connection;
 import NSBMCourseEnrollmentSystem_control.Postgraduate_student_controll;
 import NSBMCourseEnrollmentSystem_model.Postgraduate;
 import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +28,11 @@ public class Register_Postgraduate extends javax.swing.JFrame {
      */
     public Register_Postgraduate() {
         initComponents();
+        try {
+            fillcombo();
+        } catch (SQLException ex) {
+            Logger.getLogger(Register_Postgraduate.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -67,7 +78,7 @@ public class Register_Postgraduate extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         dob = new javax.swing.JTextField();
         institute = new javax.swing.JTextField();
-        Register1 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         Register = new javax.swing.JToggleButton();
         course = new javax.swing.JComboBox<>();
 
@@ -266,14 +277,14 @@ public class Register_Postgraduate extends javax.swing.JFrame {
         });
         jPanel1.add(institute, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 320, 30));
 
-        Register1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Register1.setText("Back");
-        Register1.addActionListener(new java.awt.event.ActionListener() {
+        back.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Register1ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(Register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 140, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 140, 40));
 
         Register.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Register.setText("Register");
@@ -285,7 +296,6 @@ public class Register_Postgraduate extends javax.swing.JFrame {
         jPanel1.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 140, 40));
 
         course.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        course.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Human Resource Management", "Business Management", "Business Administration", "Computer Networks" }));
         course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 courseActionPerformed(evt);
@@ -301,9 +311,7 @@ public class Register_Postgraduate extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
         );
 
         pack();
@@ -354,7 +362,7 @@ public class Register_Postgraduate extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_instituteActionPerformed
 
-    private void Register1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         if(Home.student==1){
         Admin_Undergraduate ad = new Admin_Undergraduate();
@@ -364,7 +372,7 @@ public class Register_Postgraduate extends javax.swing.JFrame {
             Admin_Postgraduate ap =new Admin_Postgraduate();
             ap.setVisible(true);
         }
-    }//GEN-LAST:event_Register1ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
         Postgraduate us =new Postgraduate();
@@ -441,12 +449,24 @@ public class Register_Postgraduate extends javax.swing.JFrame {
             }
         });
     }
+     private void fillcombo() throws SQLException{
+        
+         String sql1="Select Course_Id from courses";
+          Connection con =DB_connection.getConnection();
+          PreparedStatement pst = con.prepareStatement(sql1);
+         ResultSet rs = pst.executeQuery();
+         
+         while(rs.next()){
+             String cour = rs.getString("Course_Id");
+             course.addItem(cour);
+         }
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Register;
-    private javax.swing.JToggleButton Register1;
     private javax.swing.JTextArea address;
     private javax.swing.JTextField age;
+    private javax.swing.JToggleButton back;
     private javax.swing.JRadioButton but1;
     private javax.swing.JRadioButton but2;
     private javax.swing.ButtonGroup buttonGroup1;

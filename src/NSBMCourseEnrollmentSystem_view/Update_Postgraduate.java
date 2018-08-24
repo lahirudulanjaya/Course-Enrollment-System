@@ -61,8 +61,8 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         faculty = new javax.swing.JTextField();
         course = new javax.swing.JTextField();
         ID = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        delete = new javax.swing.JToggleButton();
+        search = new javax.swing.JToggleButton();
         reset = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         year = new javax.swing.JTextField();
@@ -72,12 +72,13 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         degree = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         institute = new javax.swing.JTextField();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -139,23 +140,23 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         jPanel1.add(course, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 300, 30));
         jPanel1.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 300, 30));
 
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton2.setText("DELETE");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        delete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        delete.setText("DELETE");
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, 120, 40));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, 120, 40));
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton1.setText("Search");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        search.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 120, 40));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 120, 40));
 
         reset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         reset.setText("RESET");
@@ -186,14 +187,14 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 180, 40));
         jPanel1.add(institute, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, 300, 30));
 
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jToggleButton3.setText("BACK");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, 80, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, 80, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 780));
 
@@ -230,16 +231,16 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         
     }//GEN-LAST:event_updateActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
             String id = stu_id.getText();
         try {
             Postgraduate_student_controll.Postgraduate_Student_delete(id);
         } catch (SQLException ex) {
             Logger.getLogger(Update_Postgraduate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
                 String id = stu_id.getText();
         try{
             Postgraduate us =Postgraduate_student_controll.search(id);
@@ -267,7 +268,7 @@ public class Update_Postgraduate extends javax.swing.JFrame {
         }   catch (HeadlessException | SQLException ex) {
             Logger.getLogger(Update_Postgraduate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
                 ID.setText(null);
@@ -286,7 +287,7 @@ public class Update_Postgraduate extends javax.swing.JFrame {
                 institute.setText(null);
     }//GEN-LAST:event_resetActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
       if(Home.student==1){
         Admin_Undergraduate ad = new Admin_Undergraduate();
         ad.setVisible(true);
@@ -296,7 +297,7 @@ public class Update_Postgraduate extends javax.swing.JFrame {
             ap.setVisible(true);
         }
         this.dispose();
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,8 +343,10 @@ public class Update_Postgraduate extends javax.swing.JFrame {
     private javax.swing.JTextField ID;
     private javax.swing.JTextField address;
     private javax.swing.JTextField age;
+    private javax.swing.JToggleButton back;
     private javax.swing.JTextField course;
     private javax.swing.JTextField degree;
+    private javax.swing.JToggleButton delete;
     private javax.swing.JTextField dob;
     private javax.swing.JTextField faculty;
     private javax.swing.JTextField gender;
@@ -363,12 +366,10 @@ public class Update_Postgraduate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JTextField name;
     private javax.swing.JTextField phn_num;
     private javax.swing.JToggleButton reset;
+    private javax.swing.JToggleButton search;
     private javax.swing.JTextField semester;
     private javax.swing.JTextField stu_id;
     private javax.swing.JToggleButton update;

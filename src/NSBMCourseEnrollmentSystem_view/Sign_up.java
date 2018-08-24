@@ -41,17 +41,16 @@ public class Sign_up extends javax.swing.JFrame {
         user = new javax.swing.JTextField();
         password2 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        signup = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         password1 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Register");
-        setMaximumSize(new java.awt.Dimension(800, 350));
         setMinimumSize(new java.awt.Dimension(800, 350));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -67,13 +66,13 @@ public class Sign_up extends javax.swing.JFrame {
         jLabel3.setText("Register");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 170, 30));
 
-        jToggleButton1.setText("Sign Up");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        signup.setText("Sign Up");
+        signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                signupActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 150, 30));
+        getContentPane().add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 150, 30));
 
         jLabel4.setText("Password");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 100, 30));
@@ -83,13 +82,13 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 120, 30));
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 160, 30));
 
-        jToggleButton2.setText("Back");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 150, 30));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 150, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/userBackground.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, -1));
@@ -98,7 +97,7 @@ public class Sign_up extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
         
         try {
             if(password1.getText().equals(password2.getText()) && Sign_up_controll.checkvalidity(id.getText())==true){
@@ -122,13 +121,13 @@ public class Sign_up extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Sign_up.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_signupActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         Login lg =new Login();
         lg.setVisible(true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +168,7 @@ public class Sign_up extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton back;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -176,10 +176,9 @@ public class Sign_up extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JPasswordField password1;
     private javax.swing.JPasswordField password2;
+    private javax.swing.JToggleButton signup;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 

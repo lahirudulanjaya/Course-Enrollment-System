@@ -6,7 +6,6 @@
 package NSBMCourseEnrollmentSystem_control;
 
 import NSBMCourseEnrollmentSystem_DB_connection.DB_connection;
-import NSBMCourseEnrollmentSystem_model.Selected_Subjects;
 import NSBMCourseEnrollmentSystem_model.payment;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,6 +21,7 @@ public class Payment_controll {
     
     
     public static void add_payment(payment p) throws SQLException{
+        //add payment details to database
      String sql = "insert into payment values(?,?)";
      
         Connection con =DB_connection.getConnection();

@@ -57,7 +57,7 @@ public class Exam_Marks extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         grade = new javax.swing.JTextField();
         marks = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        submit = new javax.swing.JToggleButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -121,13 +121,13 @@ public class Exam_Marks extends javax.swing.JFrame {
         jPanel1.add(grade, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 90, 30));
         jPanel1.add(marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 90, 30));
 
-        jToggleButton1.setText("Submit");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 140, 30));
+        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 140, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Exam Marks");
@@ -187,7 +187,7 @@ public class Exam_Marks extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_courseActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
        Exam as =new Exam();
        as.setCourse(course.getSelectedItem().toString());
        as.setExam_name(name.getText());
@@ -204,7 +204,7 @@ public class Exam_Marks extends javax.swing.JFrame {
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(this,ex);
          }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_submitActionPerformed
 
     private void yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearActionPerformed
          try {
@@ -296,7 +296,7 @@ public class Exam_Marks extends javax.swing.JFrame {
          
     }
     private void fillcombo1() throws SQLException{
-        id.removeAllItems();
+        id.removeAllItems();//remove elements in "id" combobox
         String sql2 ="Select StudentId from undergraduate_student where Courses_Course_Id=? and Year =? and Semester =?";
          PreparedStatement pst1 = con.prepareStatement(sql2);
          pst1.setObject(1,course.getSelectedItem());
@@ -306,7 +306,7 @@ public class Exam_Marks extends javax.swing.JFrame {
         
          while(rs1.next()){
              String st = rs1.getString("StudentId");
-             id.addItem(st);
+             id.addItem(st);//add elements to id combobox
          }
     }
      private void fillcombo2() throws SQLException{
@@ -342,11 +342,11 @@ public class Exam_Marks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField marks;
     private javax.swing.JTextField name;
     private javax.swing.JComboBox<String> sem;
     private javax.swing.JComboBox<String> subject;
+    private javax.swing.JToggleButton submit;
     private javax.swing.JComboBox<String> year;
     // End of variables declaration//GEN-END:variables
 }

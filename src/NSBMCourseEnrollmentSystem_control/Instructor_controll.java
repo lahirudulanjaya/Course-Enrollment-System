@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * @author Lahiru Dulanjaya
  */
 public class Instructor_controll {
+    //adding Instuctor details to the database
     public static void add(Instructor std) throws SQLException{
         String sql = "insert into instructor  values(?,?,?,?,?,?,?,?,?,?,?,?)";
         Connection con =DB_connection.getConnection();
@@ -72,6 +73,7 @@ public class Instructor_controll {
                 
     }
     public static void Instructor_delete(String id) throws SQLException{
+        //remove instructor details from database
         String sql ="delete from instructor where Instructer_ID=?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst =con.prepareStatement(sql);
@@ -79,6 +81,7 @@ public class Instructor_controll {
         pst.executeUpdate();
     }
      public static void Instructor_update(Instructor std) throws SQLException{
+         //update details to database
         String sql = "update instructor set Name=?,Address=?,Contact_num=?,Email=?,Gender=?,Lab_Lab_ID=?,Subject_Subject_code=?,Faculty_id=?,Course_id=?,Age=?,DOB=? where Instructer_ID =?";
         Connection con =DB_connection.getConnection();
         PreparedStatement pst = con.prepareStatement(sql);
@@ -99,11 +102,12 @@ public class Instructor_controll {
         pst.executeUpdate();
      }
      public static ArrayList<Instructor> getall() throws SQLException{
+         
          Connection con = DB_connection.getConnection();
          String sql = "select * from instructor";
          Statement st = con.createStatement();
          ResultSet rs =st.executeQuery(sql);
-         ArrayList<Instructor> leclist =new ArrayList<>();
+         ArrayList<Instructor> leclist =new ArrayList<>();//array list of Instructor objects
          while (rs.next()){
              Instructor std =new Instructor();
              std.setInstructor_id(rs.getString(1));

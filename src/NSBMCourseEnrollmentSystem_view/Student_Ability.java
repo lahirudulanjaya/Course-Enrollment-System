@@ -32,51 +32,53 @@ public class Student_Ability extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        choose = new javax.swing.JToggleButton();
+        show_exam = new javax.swing.JToggleButton();
+        show_assignment = new javax.swing.JToggleButton();
+        change = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton1.setText("Choose Subjects");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        choose.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        choose.setText("Choose Subjects");
+        choose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                chooseActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 250, 50));
+        jPanel1.add(choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 170, 50));
 
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton2.setText("Show Exam Marks");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        show_exam.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        show_exam.setText(" Exam Marks");
+        show_exam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                show_examActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 250, 50));
+        jPanel1.add(show_exam, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 170, 50));
 
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton3.setText("Show Assignment Marks");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        show_assignment.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        show_assignment.setText("Assignment Marks");
+        show_assignment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                show_assignmentActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 250, 50));
+        jPanel1.add(show_assignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 170, 50));
 
-        jToggleButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton4.setText("Change Subjects");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        change.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        change.setText("Change Subjects");
+        change.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                changeActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 250, 50));
+        jPanel1.add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, 50));
 
         jToggleButton5.setText("BACK");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +86,13 @@ public class Student_Ability extends javax.swing.JFrame {
                 jToggleButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 110, 30));
+        jPanel1.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 110, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/sub.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 100, 80));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/res.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 100, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +109,7 @@ public class Student_Ability extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void show_assignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_assignmentActionPerformed
         try {
             this.dispose();
             Get_Assignment_Grade AG =new Get_Assignment_Grade();
@@ -109,15 +117,15 @@ public class Student_Ability extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Student_Ability.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_show_assignmentActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void chooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseActionPerformed
         this.dispose();
         Choose_Subject_Undergraduate csu =new Choose_Subject_Undergraduate();
         csu.setVisible(true);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_chooseActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void show_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_examActionPerformed
         try {
             Get_Exam_Marks ex =new Get_Exam_Marks();
             this.dispose();
@@ -125,13 +133,13 @@ public class Student_Ability extends javax.swing.JFrame {
         } catch (SQLException ex1) {
             Logger.getLogger(Student_Ability.class.getName()).log(Level.SEVERE, null, ex1);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_show_examActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+    private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
       this.dispose();
       Change_Subject cs =new Change_Subject();
       cs.setVisible(true);
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_changeActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
       this.dispose();
@@ -176,11 +184,13 @@ public class Student_Ability extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton change;
+    private javax.swing.JToggleButton choose;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton show_assignment;
+    private javax.swing.JToggleButton show_exam;
     // End of variables declaration//GEN-END:variables
 }

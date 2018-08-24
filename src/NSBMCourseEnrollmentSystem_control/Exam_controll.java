@@ -19,8 +19,9 @@ import java.util.ArrayList;
  * @author Lahiru Dulanjaya
  */
 public class Exam_controll {
+    //adding Exam marks to the database
     public static void add(Exam ex) throws SQLException{
-        Connection con =DB_connection.getConnection();
+        Connection con =DB_connection.getConnection();//Connect to mysql
         String sql ="insert into Exam(Student_Id,Course,Subject_code,Year,Semester,Exam_name,Exam_marks,Exam_grade) values(?,?,?,?,?,?,?,?)";
         PreparedStatement pst = con.prepareStatement(sql);
         pst.setObject(1,ex.getStudent_Id());
@@ -74,7 +75,7 @@ public class Exam_controll {
          st.setObject(1, id);
          
          ResultSet rs = st.executeQuery();
-         ArrayList<Exam> list = new ArrayList<>();
+         ArrayList<Exam> list = new ArrayList<>();//array list of Exam objects
          while(rs.next()){
              Exam as =new Exam();
              as.setSubject_code(rs.getString(1));

@@ -42,8 +42,8 @@ public class Show_undergraduate extends javax.swing.JFrame {
         business = new javax.swing.JRadioButton();
         computing = new javax.swing.JRadioButton();
         engineering = new javax.swing.JRadioButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        show = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Show All");
@@ -77,27 +77,27 @@ public class Show_undergraduate extends javax.swing.JFrame {
         engineering.setText("School of Engineering");
         getContentPane().add(engineering, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
 
-        jToggleButton1.setText("Show Students");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        show.setText("Show Students");
+        show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                showActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 150, -1));
+        getContentPane().add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 150, -1));
 
-        jToggleButton2.setText("Back");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 90, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 90, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         try {
             
             ArrayList<Undergraduate_Student> students = Undergraduate_Student_controll.getall();
@@ -120,13 +120,13 @@ public class Show_undergraduate extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Show_undergraduate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_showActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        this.dispose();
         Admin_Undergraduate ad = new Admin_Undergraduate();
         ad.setVisible(true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,14 +164,14 @@ public class Show_undergraduate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton back;
     private javax.swing.JRadioButton business;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton computing;
     private javax.swing.JRadioButton engineering;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton show;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

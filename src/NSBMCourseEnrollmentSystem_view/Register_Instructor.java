@@ -70,7 +70,7 @@ public class Register_Instructor extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         dob = new javax.swing.JTextField();
         room = new javax.swing.JTextField();
-        Register1 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
         Register = new javax.swing.JToggleButton();
         course = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
@@ -87,7 +87,7 @@ public class Register_Instructor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Register  Instructor");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 390, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 390, 40));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,14 +226,14 @@ public class Register_Instructor extends javax.swing.JFrame {
         });
         jPanel1.add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 320, 30));
 
-        Register1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Register1.setText("Back");
-        Register1.addActionListener(new java.awt.event.ActionListener() {
+        back.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Register1ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(Register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 140, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 140, 40));
 
         Register.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Register.setText("Register");
@@ -319,11 +319,11 @@ public class Register_Instructor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_roomActionPerformed
 
-    private void Register1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         Admin_Instructor ai =new Admin_Instructor();
-        ai.setVisible(false);
-    }//GEN-LAST:event_Register1ActionPerformed
+        ai.setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
         Instructor us =new Instructor();
@@ -419,9 +419,9 @@ public class Register_Instructor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Register;
-    private javax.swing.JToggleButton Register1;
     private javax.swing.JTextArea address;
     private javax.swing.JTextField age;
+    private javax.swing.JToggleButton back;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> course;

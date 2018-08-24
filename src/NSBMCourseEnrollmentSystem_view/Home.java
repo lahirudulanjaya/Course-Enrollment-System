@@ -31,10 +31,10 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        postgraduate = new javax.swing.JButton();
+        contack = new javax.swing.JButton();
         undergraduate = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        admin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,24 +52,24 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lahiru Dulanjaya\\Documents\\NetBeansProjects\\Course Entrollment System\\build\\classes\\NSBMCourseEnrollmentSystem_resources\\nsbm.jpg")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 360, 140));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/download (2).jpg"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        postgraduate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/download (2).jpg"))); // NOI18N
+        postgraduate.setBorder(null);
+        postgraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                postgraduateActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 150, 150));
+        jPanel1.add(postgraduate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 150, 150));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/www.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        contack.setBackground(new java.awt.Color(255, 255, 255));
+        contack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/www.png"))); // NOI18N
+        contack.setBorder(null);
+        contack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                contackActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 130, 100));
+        jPanel1.add(contack, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 130, 100));
 
         undergraduate.setBackground(new java.awt.Color(204, 255, 204));
         undergraduate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/Undergraduate.jpg"))); // NOI18N
@@ -82,15 +82,15 @@ public class Home extends javax.swing.JFrame {
         });
         jPanel1.add(undergraduate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 150, 150));
 
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/images (1).jpg"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        admin.setForeground(new java.awt.Color(255, 255, 255));
+        admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/images (1).jpg"))); // NOI18N
+        admin.setBorder(null);
+        admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                adminActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 150, 150));
+        jPanel1.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 150, 150));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
@@ -135,18 +135,18 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void postgraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postgraduateActionPerformed
     Home.stage =2;
      this.dispose();
      Login lg =new Login();
      lg.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_postgraduateActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void contackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contackActionPerformed
         Contact c =new Contact();
         c.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_contackActionPerformed
 
     private void undergraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undergraduateActionPerformed
      Home.stage =1;
@@ -155,12 +155,12 @@ public class Home extends javax.swing.JFrame {
      lg.setVisible(true);
     }//GEN-LAST:event_undergraduateActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       stage =5;
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+       Home.stage =3;
      this.dispose();
      Login lg =new Login();
      lg.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_adminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,9 +198,8 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton admin;
+    private javax.swing.JButton contack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -209,6 +208,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton postgraduate;
     private javax.swing.JButton undergraduate;
     // End of variables declaration//GEN-END:variables
 }

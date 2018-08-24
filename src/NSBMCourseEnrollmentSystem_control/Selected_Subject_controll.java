@@ -22,7 +22,8 @@ import javax.swing.JTextField;
 public class Selected_Subject_controll {
     
     public static void add_subject(Selected_Subjects sub) throws SQLException{
-        Connection con = DB_connection.getConnection();
+        //insert values to selected_subject table
+        Connection con = DB_connection.getConnection();//create database connection
         String sql ="insert into selected_subject values(?,?,?)";
         PreparedStatement pst = con.prepareStatement(sql);
         pst.setObject(2,sub.getSubject_code());

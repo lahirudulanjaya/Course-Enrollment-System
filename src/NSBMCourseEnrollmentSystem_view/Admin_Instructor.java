@@ -33,9 +33,10 @@ public class Admin_Instructor extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         find = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        show = new javax.swing.JToggleButton();
         add = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        back = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 500));
@@ -48,31 +49,39 @@ public class Admin_Instructor extends javax.swing.JFrame {
                 findActionPerformed(evt);
             }
         });
-        jPanel1.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 266, 49));
+        jPanel1.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 140, 90));
 
-        jToggleButton3.setText("Show All instructors");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        show.setText("Show All instructors");
+        show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                showActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 266, 49));
+        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 130, 90));
 
+        add.setBackground(new java.awt.Color(204, 204, 204));
         add.setText("Add Instructor");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
-        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 266, 49));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 140, 90));
 
-        jToggleButton6.setText("Back");
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 120, 30));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 120, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 51, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NSBMCourseEnrollmentSystem_resources/Instructor.jpg"))); // NOI18N
+        jLabel1.setText("Manage Instructor Details");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 500, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +91,7 @@ public class Admin_Instructor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
         );
 
         pack();
@@ -95,11 +104,11 @@ public class Admin_Instructor extends javax.swing.JFrame {
         fd.setVisible(true);
     }//GEN-LAST:event_findActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
        this.dispose();
        Show_Instructors sh = new Show_Instructors();
        sh.setVisible(true);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_showActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         
@@ -109,11 +118,11 @@ public class Admin_Instructor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addActionPerformed
 
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.dispose();
         register_option rg = new register_option();
         rg.setVisible(true);
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,9 +168,10 @@ public class Admin_Instructor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton add;
+    private javax.swing.JToggleButton back;
     private javax.swing.JToggleButton find;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JToggleButton show;
     // End of variables declaration//GEN-END:variables
 }
